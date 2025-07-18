@@ -15,19 +15,30 @@
 
 <body>
     <template id="card-template">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title"></h5>
-                <div class="card-text"></div>
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://static.wikia.nocookie.net/mrmen/images/3/3a/MrHappy.svg/revision/latest/scale-to-width-down/290?cb=20230902095401" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <div class="card-text"></div>
+                </div>
             </div>
         </div>
     </template>
 
-    <div id="card-list"></div>
+    <!-- testing column formatting -->
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-3 bg-info">column</div>
+        <div class="col-12 col-sm-6 col-md-3 bg-info">column</div>
+        <div class="col-12 col-sm-6 col-md-3 bg-info">column</div>
+        <div class="col-12 col-sm-6 col-md-3 bg-info">column</div>
+    </div>
+
+    <div id="card-list" class="row"></div>
     <!-- New template cards will be appended here -->
 
     <!-- New artist cards will be appended in here -->
-    <div id="card-list2"></div>
+    <div id="card-list2" class="row"></div>
 </body>
 
 <script>
