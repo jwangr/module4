@@ -1,4 +1,8 @@
+const db = new IndexedDBHelper('MyDB', 'Users');
+
+
 window.onload = async () => {
+    await db.init(); // optional: (keyPath, autoIncrement)
     const productsDao = new ProductsDao();
     try {
         const products = await productsDao.getProducts(3);
@@ -10,6 +14,8 @@ window.onload = async () => {
     catch (error) {
         console.log(error)
     }
+    const cartitems = await db.getAll();
+    console.log(cartitems);
 }
 
 function displayProducts(product) {

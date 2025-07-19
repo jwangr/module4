@@ -1,5 +1,9 @@
+const db = new IndexedDBHelper('MyDB', 'Users');
+
 window.onload = async () => {
     const productsDao = new ProductsDao();
+    await db.init(); // optional: (keyPath, autoIncrement)
+
     try {
         const products = await productsDao.getProducts();
         console.log(products);
@@ -21,14 +25,28 @@ window.onload = async () => {
 }
 
 function displayProducts(product) {
-    let template = document.getElementById("card-template").content.cloneNode(true);
+    const template = document.getElementById("card-template").content.cloneNode(true);
+
     template.querySelector('.card-title').innerText = product.title;
-    template.querySelector('.card-price').innerText = `$ ` + product.price;
+    template.querySelector('.card-price').innerText = `$ ${product.price}`;
     template.querySelector('.card-category').innerText = product.category.toUpperCase();
     template.querySelector('.image').style.backgroundImage = `url(${product.image})`;
+    const container = document.getElementById("productspanel");
+    container.appendChild(template);
 
-    document.getElementById("productspanel").appendChild(template);
+    // // Grab the last inserted card and attach event
+    const lastCard = container.lastElementChild;
+    console.log(lastCard.querySelector('a').textContent);
+    lastCard.querySelector('a').addEventListener("click", async() => {
+        console.log("Picked up click");
+        await db.add(product);
+    })
+    // lastCard.querySelector('.addCart').addEventListener("click", async () => {
+    //     console.log('Picked up anchor');
+    //     // await db.add(product);
+    // });
 }
+
 
 let categories = new Set();
 function getCategories(element) {
@@ -59,5 +77,7 @@ async function filterProducts(category) {
             if (element.category == category) { displayProducts(element) };
         });
     }
-    catch (error) {console.log(error)};
+    catch (error) { console.log(error) };
 }
+
+
