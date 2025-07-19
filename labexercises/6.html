@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Store Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+
+
+    <style>
+        body {
+            background-color: beige;
+            padding: 10px;
+        }
+        .customFont {
+            font-family: "Trirong";
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="customFont">
+        <p>Hi, I'm using font family icons and google fonts.</p>
+        <i class="fa fa-car"></i>
+        <i class="fa fa-car" style="font-size:48px;"></i>
+        <i class="fa fa-car" style="font-size:60px;color:red;"></i>
+        <i class="fa-brands fa-instagram"></i>
+    </div> -->
+
+    <template id="card-template">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-price">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-category">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <div id="product-list" class="row"></div>
+
+    <script>
+        function getProducts() {
+            fetch("https://fakestoreapi.com/products?_limit=10")
+                .then(response => response.json())
+                .then(products => {console.log(products),
+                    products.forEach(element => {
+                        displayProducts(element);
+                    });
+                });
+        }
+
+        function displayProducts(product) {
+            const template = document.getElementById("card-template").contents.cloneNode(true);
+            template.querySelector("card-title").innerText = product.title;
+            template.querySelector("card-price").innerText = product.price;
+            template.querySelector("card-category").innerText = product.category;
+            
+            document.getElementById("product-list").appendChild(template);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {getProducts()});
+
+    </script>
+</body>
+
+</html>
