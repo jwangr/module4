@@ -1,7 +1,7 @@
 class ProductsDao {
-    async getProducts() {
+    async getProducts(number) {
         try {
-            const response = await fetch("https://fakestoreapi.com/products");
+            const response = await fetch(`https://fakestoreapi.com/products?limit=${number}`);
             const json = await response.json();
             return json;
         }

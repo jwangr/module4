@@ -20,25 +20,28 @@
 <body>
     <!-- Title and nav bar -->
     <div id="banner" class="row align-items-center">
-        <h1 id="title" class="col-12 col-sm-8  text-center">Clothes4All</h1>
-        <nav class="navbar navbar-light col-12 col-sm-4">
-            <form class="container-fluid justify-content-start">
-                <button class="btn btn-success me-2" type="button">Dashboard</button>
-                <button class="btn btn-success me-2" type="button">Products</button>
-                <button class="btn btn-success me-2" type="button">Cart</button>
+        <h1 id="title" class="col-12 col-lg-8  text-center">KMort</h1>
+        <nav class="navbar navbar-light col-12 col-lg-4">
+            <form class="container-fluid justify-content-center">
+                <a class="btn btn-success me-2 col-12 col-sm-3 my-1" type="button" href="./dashboard.html">Dashboard</a>
+                <a class="btn btn-success me-2 col-12 col-sm-3 my-1" type="button" href="./index.html">Products</a>
+                <a class="btn btn-success me-2 col-12 col-sm-3 my-1" type="button" href="./cart.html">Cart</a>
             </form>
         </nav>
     </div>
 
     <div class="row p-1">
-        <div id="productspanel" class="row p-3 justify-content-center col-12 col-sm-8">
+        <div id="productspanel" class="row p-3 justify-content-center col-12 col-md-9">
+            <h3 class="text-center">Popular Streetwear</h3>
             <template id="card-template">
                 <div class="card col-12 col-sm-5 col-lg-3 m-3">
                     <div class="card-body">
-                        <img src="..." class="card-img-top">
+                        <div class="image" style="height: 150px"></div>
                         <h5 class="card-title">Card title</h5>
-                        <p class="card-price">Some quick example text to build on the card title and make up the bulk of thecard’s content.</p>
-                        <p class="card-category">Some quick example text to build on the card title and make up the bulk of thecard’s content.</p>
+                        <p class="card-price">Some quick example text to build on the card title and make up the bulk of
+                            thecard’s content.</p>
+                        <p class="card-category">Some quick example text to build on the card title and make up the bulk
+                            of thecard’s content.</p>
                         <a href="#" class="btn btn-primary">Add to Cart</a>
                     </div>
                 </div>
@@ -46,8 +49,22 @@
 
         </div>
 
-        <div id="shoppingcartpanel" class="col-12 col-sm-4 card">
-            <h2>Shop-aholic Cart</h2>
+        <div id="shoppingcartpanel" class="col-12 col-md-3 card">
+            <h2>🛒 Shop-aholic Cart</h2>
+            <template id="cart-item">
+                <div class="card col-12 col-sm-5 col-lg-3 m-3">
+                    <div class="card-body">
+                        <div class="image" style="height: 150px"></div>
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-price">Some quick example text to build on the card title and make up the bulk of
+                            thecard’s content.</p>
+                            of thecard’s content.</p>
+                        <a href="#" class="btn btn-primary">Delete from Cart</a>
+                    </div>
+                </div>
+            </template>
+            <p><h3>Items: </h3>0</p>
+            <p><h3>Current Total: </h3>$0</p>
         </div>
     </div>
 

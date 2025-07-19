@@ -5,10 +5,15 @@ $color-accent: #faedcd */
 
 
 #banner {
-    height: 100px;
+    min-height: 100px;
     background-color: #CCD5AE;
 }
 
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
 .nav {
     background-color: #905b5a;
     height: 50%;
@@ -16,3 +21,10 @@ $color-accent: #faedcd */
     box-sizing: border-box;
     
 }
+
+.image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
