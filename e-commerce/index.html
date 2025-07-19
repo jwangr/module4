@@ -31,45 +31,42 @@
     </div>
 
     <div class="row p-1">
-        <div id="productspanel" class="row p-3 justify-content-center">
+        <div class="row p-3 justify-content-center">
             <h3 class="text-center">All Products</h3>
             <div class="row">
                 <div class=" col-12 col-sm-6"">                
-                    <select class=" form-select aria-label="">
-                    <option selected>Select category</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <select id="categorySelection" class=" form-select aria-label="">
+                        <option selected>Select category</option>
                     </select>
                 </div>
 
-                <div class=" col-12 col-sm-6"">                
+                <div class=" col-12 col-sm-6"">
                     <select class=" form-select aria-label="">
                     <option selected>Sort By</option>
-                    <option value="1">Recommended</option>
-                    <option value="1">Price: low to high</option>
-                    <option value="2">Price: high to low</option>
-                    <option value="3">Name</option>
+                    <option value=" 1">Recommended</option>
+                        <option value="1">Price: low to high</option>
+                        <option value="2">Price: high to low</option>
+                        <option value="3">Name</option>
                     </select>
                 </div>
             </div>
-
-
-            <template id="card-template">
-                <div class="card col-12 col-sm-5 col-lg-3 m-3">
-                    <div class="card-body">
-                        <div class="image" style="height: 150px"></div>
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-price">Some quick example text to build on the card title and make up the bulk of
-                            thecard’s content.</p>
-                        <p class="card-category">Some quick example text to build on the card title and make up the bulk
-                            of thecard’s content.</p>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                    </div>
-                </div>
-            </template>
-
         </div>
+        <div id="productspanel"></div>
+    </div>
+
+    <template id="card-template">
+        <div class="card col-12 col-sm-5 col-lg-3 m-3">
+            <div class="card-body">
+                <div class="image" style="height: 150px"></div>
+                <h5 class="card-title">Card title</h5>
+                <p class="card-price">Some quick example text to build on the card title and make up the bulk of
+                    thecard’s content.</p>
+                <p class="card-category">Some quick example text to build on the card title and make up the bulk
+                    of thecard’s content.</p>
+                <a href="#" class="btn btn-primary">Add to Cart</a>
+            </div>
+        </div>
+    </template>
 </body>
 
 </html>
