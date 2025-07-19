@@ -1,0 +1,18 @@
+/* $heading1: 
+$color-primary: #CCD5AE
+$color-secondary: #e9edc9
+$color-accent: #faedcd */
+
+
+#banner {
+    height: 100px;
+    background-color: #CCD5AE;
+}
+
+.nav {
+    background-color: #905b5a;
+    height: 50%;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
