@@ -48,7 +48,7 @@
 
     <script>
         function getProducts() {
-            fetch("https://fakestoreapi.com/products?_limit=10")
+            fetch("https://fakestoreapi.com/products?limit=10")
                 .then(response => response.json())
                 .then(products => {console.log(products),
                     products.forEach(element => {
@@ -58,10 +58,10 @@
         }
 
         function displayProducts(product) {
-            const template = document.getElementById("card-template").contents.cloneNode(true);
-            template.querySelector("card-title").innerText = product.title;
-            template.querySelector("card-price").innerText = product.price;
-            template.querySelector("card-category").innerText = product.category;
+            const template = document.getElementById("card-template").content.cloneNode(true);
+            template.querySelector(".card-title").innerText = product.title;
+            template.querySelector(".card-price").innerText = `$ ` + product.price;
+            template.querySelector(".card-category").innerText = product.category;
             
             document.getElementById("product-list").appendChild(template);
         }
