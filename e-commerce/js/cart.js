@@ -11,7 +11,7 @@ window.onload = async () => {
         cartTotal += element.price;
     });
     document.querySelectorAll('.cartitemslength').forEach(element => element.innerText = cartitems.length);
-    document.getElementById('cartTotal').innerText = cartTotal;
+    document.getElementById('cartTotal').innerText = cartTotal.toFixed(2);
 }
 
 function showCartItems(product) {
