@@ -3,28 +3,35 @@ $color-primary: #CCD5AE
 $color-secondary: #e9edc9
 $color-accent: #faedcd */
 
-
 #banner {
-    min-height: 100px;
-    background-color: #CCD5AE;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: min-content;
+  background: linear-gradient(to bottom right, #ccd5ae, #e9edc9);
+  color: #5c6146; /* A dark olive text for contrast */
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
+
 .nav {
-    background-color: #905b5a;
-    height: 50%;
-    border-radius: 4px;
-    box-sizing: border-box;
-    
+  background-color: #905b5a;
+  height: 50%;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .image {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-

@@ -21,12 +21,12 @@
 <body>
     <!-- Title and nav bar -->
     <div id="banner" class="row align-items-center">
-        <h1 id="title" class="col-12 col-lg-8  text-center">KMort</h1>
-        <nav class="navbar navbar-light col-12 col-lg-4">
+        <h1 id="title" class="col-12 col-lg-7  text-center">KMort</h1>
+        <nav class="navbar navbar-light col-12 col-lg-5">
             <form class="container-fluid justify-content-center">
                 <a class="btn btn-success me-2 col-12 col-sm-3 my-1" type="button" href="./dashboard.html">Dashboard</a>
                 <a class="btn btn-success me-2 col-12 col-sm-3 my-1" type="button" href="./index.html">Products</a>
-                <a class="btn btn-success me-2 col-12 col-sm-3 my-1" type="button" href="./cart.html">Cart</a>
+                <a class="btn btn-success me-2 col-12 col-sm-3 my-1" type="button" href="./cart.html">Cart (<span class="cartitemslength">0</span>)</a>
             </form>
         </nav>
     </div>
@@ -36,35 +36,39 @@
             <h3 class="text-center">All Products</h3>
             <div class="row">
                 <div class=" col-12 col-sm-6"">                
-                    <select id="categorySelection" class=" form-select aria-label="">
-                        <option selected>Select category</option>
+                    <select class=" form-select" id="categorySelection">
+                    <option selected value="0">Select category: All</option>
                     </select>
                 </div>
 
                 <div class=" col-12 col-sm-6"">
-                    <select class=" form-select aria-label="">
-                    <option selected>Sort By</option>
-                    <option value=" 1">Recommended</option>
-                        <option value="1">Price: low to high</option>
-                        <option value="2">Price: high to low</option>
-                        <option value="3">Name</option>
+                    <select class=" form-select" id="SortSelection">
+                    <option selected value="0">Sort By: Recommended</option>
+                    <option value="alphabetical">Alphabetical</option>
+                    <option value="lowpricefirst">Price: low to high</option>
+                    <option value="highpricefirst">Price: high to low</option>
                     </select>
                 </div>
             </div>
         </div>
-        <div id="productspanel" class="row"></div>
+        <div class="container px-5">
+            <div id="productspanel" class="row"></div>
+        </div>
+
     </div>
 
-    <template id="card-template" >
-        <div class="card col-12 col-sm-5 col-lg-3 m-3">
-            <div class="card-body">
-                <div class="image" style="height: 150px"></div>
-                <h5 class="card-title">Card title</h5>
-                <p class="card-price">Some quick example text to build on the card title and make up the bulk of
-                    thecard’s content.</p>
-                <p class="card-category">Some quick example text to build on the card title and make up the bulk
-                    of thecard’s content.</p>
-                <a href="#" class="btn btn-primary">Add to Cart</a>
+    <template id="card-template">
+        <div class="col-12 col-sm-6 col-lg-3 g-3">
+            <div class="card h-100">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div class="image" style="height: 150px"></div>
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-price">Some quick example text to build on the card title and make up the bulk of
+                        thecard’s content.</p>
+                    <p class="card-category">Some quick example text to build on the card title and make up the bulk
+                        of thecard’s content.</p>
+                    <a href="#" class="btn btn-outline-success">Add to Cart</a>
+                </div>
             </div>
         </div>
     </template>
