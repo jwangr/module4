@@ -12,6 +12,15 @@ window.onload = async () => {
     });
     document.querySelectorAll('.cartitemslength').forEach(element => element.innerText = cartitems.length);
     document.getElementById('cartTotal').innerText = cartTotal.toFixed(2);
+
+    document.getElementById("clearCart").addEventListener("click", async () => {
+        clearCart();
+    })
+
+    document.getElementById("checkout").addEventListener("click", () => {
+        alert("Items Purchased!");
+        clearCart();
+    });
 }
 
 function showCartItems(product) {
@@ -31,4 +40,12 @@ function showCartItems(product) {
         }
         catch (err) { console.err("Could not remove item") }
     })
+}
+
+async function clearCart() {
+    try {
+        await db.clear();
+        window.location.reload();
+    }
+    catch(err) {console.log('Unable to clear all items from cart')};
 }
